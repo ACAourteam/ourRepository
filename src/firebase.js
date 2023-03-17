@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
-
+import { getFirestore, collection } from "firebase/firestore";
+import { getStorage, ref } from "firebase/storage";
 const firebaseConfig = {
   apiKey: "AIzaSyCfddlqD_3rlzN7Uq1aVbluPxe19H3FYEs",
   authDomain: "our-project-c05da.firebaseapp.com",
@@ -11,9 +11,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
 export const db = getFirestore();
 export const usersRef = collection(db, "users");
-
-// tvyalner stanalu hamar => getDocs
-//tvyalner uxarkelu hamar => addDoc
+export const storage = getStorage(app);
